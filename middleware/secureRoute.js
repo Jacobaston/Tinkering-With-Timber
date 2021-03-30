@@ -21,7 +21,7 @@ async function secureRoute(req, res, next) {
         return res.status(401).send({ message: 'Unauthorized Access' })
       }
 
-      const admin = await Admin.findById(data.userId)
+      const admin = await Admin.findById(data.adminId)
 
       if (!admin) {
         return res.status(401).send({ message: 'Unauthorized, admin not found' })

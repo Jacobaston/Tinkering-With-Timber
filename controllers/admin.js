@@ -18,7 +18,7 @@ async function login(req, res, next) {
       { expiresIn: '24h' }
     )
 
-    res.send(202).send({ token, message: 'Login successful' })
+    res.status(202).send({ token, message: 'Login successful' })
 
   } catch (err) {
     next(err)
