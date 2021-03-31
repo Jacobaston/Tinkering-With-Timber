@@ -1,7 +1,20 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Navbar from './components/Navbar.js'
+import Home from './components/Home.js'
+// import SingleProduct from './components/SingleProduct.js'
 
-const App = () => (
-  <h1>Hello world</h1>
-)
+import 'bulma'
+import './styles/style.scss'
+
+const App = () => {
+  return <BrowserRouter>
+    <Navbar />
+    <Switch>
+      <Route exact path='/' component={Home} />
+      {/* <Route exact path='/products/:id' component={SingleProduct} /> */}
+    </Switch>
+  </BrowserRouter>
+}
 
 export default App
