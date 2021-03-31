@@ -21,7 +21,7 @@ async function seedDatabase() {
     const admin = await Admin.create(getAdminData())
     console.log(`👨‍💼 ${admin.length} admins created`)
 
-    const products = await Products.create(getProductData())
+    const products = await Products.create(getProductData(admin))
     console.log(`🛠 ${products.length} products created`)
 
     await mongoose.connection.close()

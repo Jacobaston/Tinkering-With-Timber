@@ -17,7 +17,10 @@ function Products() {
   console.log(product)
 
   return <>
-  <div className="section p-1">
+  <div className="section p-3 products">
+    <div>
+      <h2 className="title has-text-centered p-3">Products</h2>
+    </div>
     <div className="container">
       <div className="columns is-multiline is-mobile">
         {product.map((item, index) => {
@@ -33,6 +36,7 @@ function Products() {
                   <div className="card-content">
                     <div className="content">
                       <h2 className="title is-6 is-centered">{item.name}</h2>
+                      <p className="subtitle is-6 is-centered">£{item.price}</p>
                     </div>
                   </div>
                 </div >

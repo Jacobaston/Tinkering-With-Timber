@@ -6,7 +6,9 @@ const productSchema = new mongoose.Schema({
   price: { type: Number, required: true  },
   height: { type: Number },
   width: { type: Number },
-  depth: { type: Number }
+  depth: { type: Number },
+  image: { type: String },
+  user: { type: mongoose.Schema.ObjectId, ref: 'Admin' }
 })
 
 export default mongoose.model('Product', productSchema)

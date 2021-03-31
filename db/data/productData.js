@@ -1,4 +1,4 @@
-function getProductData() {
+function getProductData(admin) {
   return [
     {
       name: 'Bird House',
@@ -7,7 +7,8 @@ function getProductData() {
       height: 30,
       width: 12,
       depth: 12,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     },
     {
       name: 'Planter',
@@ -16,7 +17,8 @@ function getProductData() {
       height: 45,
       width: 120,
       depth: 45,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     },
     {
       name: 'Planter',
@@ -25,7 +27,8 @@ function getProductData() {
       height: 45,
       width: 120,
       depth: 45,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     },
     {
       name: 'Planter',
@@ -34,7 +37,8 @@ function getProductData() {
       height: 45,
       width: 120,
       depth: 45,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     },
     {
       name: 'Planter',
@@ -43,7 +47,8 @@ function getProductData() {
       height: 45,
       width: 120,
       depth: 45,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     },
     {
       name: 'Planter',
@@ -52,7 +57,8 @@ function getProductData() {
       height: 45,
       width: 120,
       depth: 45,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     },
     {
       name: 'Planter',
@@ -61,7 +67,8 @@ function getProductData() {
       height: 45,
       width: 120,
       depth: 45,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     },
     {
       name: 'Planter',
@@ -70,7 +77,8 @@ function getProductData() {
       height: 45,
       width: 120,
       depth: 45,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     },
     {
       name: 'Planter',
@@ -79,7 +87,8 @@ function getProductData() {
       height: 45,
       width: 120,
       depth: 90,
-      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg'
+      image: 'https://res.cloudinary.com/dj87j2nvi/image/upload/v1617209507/WhatsApp_Image_2021-03-30_at_10.31.46_gn6npw.jpg',
+      user: admin[0]
     }
   ]
 }
