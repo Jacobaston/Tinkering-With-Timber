@@ -1,4 +1,5 @@
 import axios from 'axios'
+import styled from 'styled-components'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -16,38 +17,67 @@ function Products() {
 
   console.log(product)
 
-  return <>
-  <div className="section p-3 products">
-    <div>
-      <h2 className="title has-text-centered p-3">Products</h2>
-    </div>
-    <div className="container">
-      <div className="columns is-multiline is-mobile">
-        {product.map((item, index) => {
-          return <div key={index} className="column is-one-third-desktop is-one-third-tablet is-half-mobile">
-            <Link to={`/products/${item._id}`} >
-              <section>
-                <div className="card">
-                  <div className="card-image pt-5">
-                    <figure className="image is-4by3 mr-5 ml-5">
-                      <img src={item.image} alt={item.name} />
-                    </figure>
-                  </div>
-                  <div className="card-content">
-                    <div className="content">
-                      <h2 className="title is-6 is-centered">{item.name}</h2>
-                      <p className="subtitle is-6 is-centered">£{item.price}</p>
-                    </div>
-                  </div>
-                </div >
-              </section>
-            </Link>
-          </div>
-        })}
-      </div>
-    </div>
-  </div>
-</>
+  return  (
+    <>
+    <CardWrapper>
+      {product.map((prod, index) =>   
+        <div key={index} className="container" style={{ background: `url(${prod.image}) center / cover` }}>
+          <div className="layer-container">
+            <TextContainer>
+              <div>
+                <ProductName>{prod.name}</ProductName>
+                <ProductDescription>{prod.description}</ProductDescription>           
+              </div>
+
+              <Price>{`£${prod.price}`}</Price>
+              <Link to={`/products/${prod._id}`}>
+                <Button>See more</Button>
+              </Link>
+            </TextContainer>
+          </div>       
+        </div>)}
+    </CardWrapper>
+  </>
+  )
 }
 
+const CardWrapper = styled.div`
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  margin: 30px 10px;
+`
+
+const TextContainer = styled.div`
+  margin:30px 0 0 15px;
+`
+const ProductName = styled.p`
+  font-size:16px;
+  font-weight:bolder;
+`
+const ProductDescription = styled.p`
+  margin-top:5px;
+  font-size:11px;
+  padding-right:2px;
+`
+const Price = styled.h3`
+  margin-top:20px;
+  font-weight:bolder;
+`
+const Button = styled.a`
+  position:absolute;
+  display:block;
+  bottom:30px;
+  right:15px;
+  width:120px;
+  height:40px;
+  text-align:center;
+  line-height:40px;
+  background:rgba(240,58,53,1);
+  color:#fff;
+  font-size:13px;
+  font-weight: bold;
+  border-radius:5px;
+  box-shadow:0 5px 15px rgba(240,58,53,.3);
+`
 export default Products
