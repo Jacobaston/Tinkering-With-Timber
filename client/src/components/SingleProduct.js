@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { getLoggedInUserId } from '../lib/auth.js'
-import { Link } from 'react-router-dom'
+// import { getLoggedInUserId } from '../lib/auth.js'
+// import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 function SingleProduct({ match }) {
 
   const id = match.params.id
-  const token = localStorage.getItem('token')
-  const loggedInUserId = getLoggedInUserId()
+  // const token = localStorage.getItem('token')
+  // const loggedInUserId = getLoggedInUserId()
 
   const [singleProduct, updateSingleProduct] = useState([])
 
@@ -19,31 +20,104 @@ function SingleProduct({ match }) {
     fetchData()
   }, [])
 
-  console.log(singleProduct)
 
-  async function handleDelete() {
-    await axios.delete(`/api/products/${id}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-    history.push('/')
+  // async function handleDelete() {
+  //   await axios.delete(`/api/products/${id}`, {
+  //     headers: { Authorization: `Bearer ${token}` }
+  //   })
+  //   history.push('/')
+  // }
+
+  return (
+    <>
+      <div className="columns" style={{ marginBottom: '50px' }}>
+        <div className="column">
+          <ImageWrapper>
+            <Image src={singleProduct.image} />
+          </ImageWrapper>
+        </div>
+        <div className="column">
+          <Details>
+            <Title>{singleProduct.name}</Title>
+            <Price>{`£${singleProduct.price}`}</Price>
+            <p className="description">{singleProduct.description}</p>
+
+            <div className="columns">
+              
+              <div className="column">
+                <Button>
+                  <A href="mailto:tinkeringwithtimber@gmail.com">Email to order</A>
+                </Button>
+              </div>
+
+            </div>
+
+            <SmallText><Bold>Standard manufacturing times</Bold> 1-2 weeks</SmallText>
+            <SmallText>Orders are pick up only</SmallText>
+            <ProductDimensions>
+              <SmallText style={{ fontWeight: 'bold' }}>Product image dimensions</SmallText>
+              <SmallText>{`Height: ${singleProduct.height}cm`}</SmallText>
+              <SmallText>{`Width: ${singleProduct.widtth}cm`}</SmallText>
+              <SmallText>{`Depth: ${singleProduct.depth}cm`}</SmallText>
+            </ProductDimensions>
+          </Details>
+
+        </div>
+      </div>
+    </>
+  )
+}
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+`
+const Details = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+`
+const Image = styled.img`
+  border-radius: 10px;
+`
+const Title = styled.h1`
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+`
+const Price = styled.p`
+  margin-bottom: 10px;
+`
+const SmallText = styled.p`
+  font-size: 14px;
+`
+const Bold = styled.span`
+  font-weight: bold;
+`
+const Button = styled.button`
+  background: #ff6900;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  padding: 5px 0;
+  border-radius: 2px;
+`
+const A = styled.a`
+  color: #fff;
+  &:hover {
+    color: black;
   }
+`
+const ProductDimensions = styled.div`
+  margin-top: 20px;
+`
 
-  return <section className="singleProduct">
-    <div className="columns is-desktop">
-      <div className="column m-3">
-        <figure className="image is-4by3">
-          <img src={singleProduct.image} />
-        </figure>
-      </div>
-      <div className="column m-3">
-        <h2 className="title">{singleProduct.name}</h2>
-        <p>£{singleProduct.price}</p>
-        <p>Height: {singleProduct.height} cm</p>
-        <p>Width:{singleProduct.width} cm</p>
-        <p>Depth: {singleProduct.depth} cm</p>
-        <p>Description: {singleProduct.description}</p>
-      </div>
-      {singleProduct.user && <>
+export default SingleProduct
+
+{/* {singleProduct.user && <>
         {loggedInUserId === singleProduct.user &&
           <>
             {
@@ -54,9 +128,4 @@ function SingleProduct({ match }) {
             }
           </>
         }
-      </>}
-    </div>
-  </section>
-}
-
-export default SingleProduct
+      </>} */}

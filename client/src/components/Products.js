@@ -18,28 +18,35 @@ function Products() {
   console.log(product)
 
   return  (
-    <>
-    <CardWrapper>
-      {product.map((prod, index) =>   
-        <div key={index} className="container" style={{ background: `url(${prod.image}) center / cover` }}>
-          <div className="layer-container">
-            <TextContainer>
-              <div>
-                <ProductName>{prod.name}</ProductName>
-                <ProductDescription>{prod.description}</ProductDescription>           
-              </div>
+    <WidthWrapper>
+      <CardWrapper>
+        {product.map((prod, index) =>   
+          <div key={index} className="container" style={{ background: `url(${prod.image}) center / cover` }}>
+            <div className="layer-container">
+              <TextContainer>
+                <div>
+                  <ProductName>{prod.name}</ProductName>
+                  <ProductDescription>{prod.description}</ProductDescription>           
+                </div>
 
-              <Price>{`£${prod.price}`}</Price>
-              <Link to={`/products/${prod._id}`}>
-                <Button>See more</Button>
-              </Link>
-            </TextContainer>
-          </div>       
-        </div>)}
-    </CardWrapper>
-  </>
+                <Price>{`£${prod.price}`}</Price>
+                <Link to={`/products/${prod._id}`}>
+                  <Button>See more</Button>
+                </Link>
+              </TextContainer>
+            </div>       
+          </div>)}
+      </CardWrapper>
+    </WidthWrapper>
   )
 }
+
+const WidthWrapper = styled.div`
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+  justify-content: center;
+`
 
 const CardWrapper = styled.div`
   display: flex;
